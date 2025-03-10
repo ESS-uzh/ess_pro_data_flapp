@@ -10,10 +10,10 @@ with open("data/projects.json") as f:
 
 # Research topics and images
 TOPICS = {
-    "Biodiversity": "biodiversity_img.jpg",
-    "Climate Change": "climate_change_img.png",
-    "Ecosystem Services": "ecosystem_services_img.jpg",
-    "Social Ecological Systems": "sus_dev_img.png",
+    "Biodiversity": ["biodiversity_img.jpg", "biodiversity is .."],
+    "Climate Change": ["climate_change_img.png", " climate change is .."],
+    "Ecosystem Services": ["ecosystem_services_img.jpg", "ecosystems services is .."],
+    "Social Ecological Systems": ["sus_dev_img.png", " sustenaible development is .."],
 }
 
 # Prepare the data for the map
@@ -35,11 +35,13 @@ def index():
 def topic_page(topic_name):
     """Page for a specific research topic with project filtering."""
     topic_projects = [p for p in projects if topic_name in p["tags"]]
+    print(topic_projects)
     project_locations = [(p["lat"], p["lon"], p["name"]) for p in topic_projects]
-
+    topic_description = TOPICS[topic_name][1]
     return render_template(
         "topic_page.html",
         topic_name=topic_name,
+        topic_description=topic_description,
         projects=topic_projects,
         project_locations=project_locations,
         generate_map=generate_map,

@@ -4,6 +4,13 @@ body {
     background-color: #f9f9f9;
 }
 
+
+/* General Page Styling */
+h2,
+p {
+    margin-bottom: 20px;
+}
+
 /* Style the navbar title */
 .navbar-title {
     font-size: 1.5rem;
@@ -56,14 +63,15 @@ body {
     margin-top: 3rem !important;
 }
 
-/* Map container styling */
+
+/* Map Styling */
 .map-container {
-    margin-top: 30px;
     width: 100%;
-    height: 500px;
+    height: 350px;
     border: 2px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
+    background-color: transparent;
 }
 
 /* Carousel controls */
@@ -136,4 +144,17 @@ body {
 .stretched-link:hover {
     color: #0056b3;
     text-decoration: none;
+}
+
+/* Maintain fixed height for filter card */
+.filter-card {
+    min-height: 350px;
+    max-height: 350px;
+}
+
+/* Project list with scrollable container */
+.project-list-container {
+    max-height: 400px;
+    /* Keep consistent size */
+    overflow-y: auto;
 }

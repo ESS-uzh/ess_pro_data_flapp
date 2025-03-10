@@ -11,10 +11,11 @@
 
         <!-- Research Topics Section -->
         <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
-            {% for topic, image in research_topics.items() %}
+            {% for topic, content in research_topics.items() %}
             <div class="col d-flex align-items-stretch">
                 <div class="card shadow-sm h-100">
-                    <img src="{{ url_for('static', filename='images/' + image) }}" class="img-fluid" alt="{{ topic }}">
+                    <img src="{{ url_for('static', filename='images/' + content[0]) }}" class="img-fluid"
+                        alt="{{ topic }}">
                     <div class="card-body">
                         <h5 class="card-title text-center">{{ topic }}</h5>
                     </div>

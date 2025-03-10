@@ -1,18 +1,33 @@
 [
     {
         "id": 1,
-        "name": "Project Alpha",
-        "description": "A biodiversity project",
-        "lat": 47.457618,
-        "lon": 8.446797,
+        "name": "Obsgession",
+        "description": "The OBSGESSION project will help address the challenges of declining freshwater and terrestrial biodiversity through a multi-faceted approach aimed at integrating existing methods and technologies for assessing and predicting biodiversity change and its drivers. Its results will be used to help inform efforts like the CBD, IPBES and the European Green Deal and EU Biodiversity Strategy for 2030, and provide state-of-the-art ecological models on biodiversity change on a case study and EU-level.",
+        "lat": 47.119485,
+        "lon": 7.156640,
+        "location": "Europe",
         "tags": [
-            "Biodiversity"
+            "Biodiversity",
+            "Sustainable Development"
         ],
         "participants": [
-            "Alice",
-            "Bob"
+            "Tiziana Koch",
+            "Dr. Andreas Hüni",
+            "Dr. Christian Rossi",
+            "Prof. Maria J. Santos"
         ],
-        "funding": "Organization A",
+        "doi_data": "",
+        "doi_pub": "",
+        "funding": [
+            [
+                "Horizon2020",
+                "Horizon Europe"
+            ],
+            [
+                "EU",
+                "European Union"
+            ]
+        ],
         "polygon": [
             [
                 47.4576,

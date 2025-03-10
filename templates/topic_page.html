@@ -1,25 +1,83 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2 class="text-center mb-5">{{ topic_name }}</h2>
-<div>
-    {{ generate_map(project_locations) | safe }}
-</div>
-<!-- Projects Section -->
-<h2 class="text-center mb-4">Projects</h2>
-<div class="row row-cols-1 row-cols-md-2 g-4">
-    {% for project in projects %}
-    <div class="col">
-        <div class="card project-card shadow-sm">
+<h2 class="text-left mb-4">{{ topic_name }}</h2>
+<p class="text-left mb-5">{{ topic_description }}</p>
+
+<div class="row">
+    <!-- Left Column: Filter and Project List -->
+    <div class="col-md-4">
+        <!-- Filter Section -->
+        <div class="card mb-4 shadow-sm filter-card">
             <div class="card-body">
-                <h5 class="card-title">{{ project['name'] }}</h5>
-                <p class="card-text">
-                    Click for more details
-                </p>
-                <a href="{{ url_for('project_page', project_id=project['id']) }}" class="stretched-link"></a>
+                <h5 class="card-title">Filter Projects</h5>
+                <form id="filter-form">
+                    <div class="mb-3">
+                        <label for="location-filter" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="location-filter" placeholder="Search by location">
+                    </div>
+                    <div class="mb-3">
+                        <label for="participant-filter" class="form-label">Participant</label>
+                        <input type="text" class="form-control" id="participant-filter"
+                            placeholder="Search by participant">
+                    </div>
+                    <button type="button" class="btn btn-primary w-100" onclick="filterProjects()">Apply
+                        Filters</button>
+                </form>
             </div>
         </div>
     </div>
-    {% endfor %}
+    <!-- Right Column: Map -->
+    <div class="col-md-8">
+        <div class="map-container mb-4">
+            {{ generate_map(project_locations) | safe }}
+        </div>
+    </div>
 </div>
+
+<!-- Project Cards spanning full width -->
+<div class="row">
+    <div class="col-12">
+        <h5 class="card-title mb-3">Projects</h5>
+        <div id="project-list" class="project-list">
+            {% for project in projects %}
+            <div class="card project-card mb-2">
+                <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-start">
+                    <div>
+                        <h6 class="card-title mb-1">{{ project['name'] }}</h6>
+                        <p class="card-text mb-1">
+                            <small>Location: {{ project['location'] }}</small><br>
+                            <small>Participant: {{ project['participants'] }}</small>
+                        </p>
+                    </div>
+                    <a href="{{ url_for('project_page', project_id=project['id']) }}"
+                        class="btn btn-outline-primary">View Project</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // Filtering function for projects
+    function filterProjects() {
+        const locationFilter = document.getElementById('location-filter').value.toLowerCase();
+        const participantFilter = document.getElementById('participant-filter').value.toLowerCase();
+        const projects = document.querySelectorAll('#project-list .project-card');
+
+        projects.forEach(project => {
+            const location = project.querySelector('.card-text small:nth-child(1)').textContent.toLowerCase();
+            const participant = project.querySelector('.card-text small:nth-child(2)').textContent.toLowerCase();
+
+            if (location.includes(locationFilter) && participant.includes(participantFilter)) {
+                project.style.display = 'block';
+            } else {
+                project.style.display = 'none';
+            }
+        });
+    }
+</script>
+
 {% endblock %}
