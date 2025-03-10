@@ -7,7 +7,7 @@
 
     <!-- Spacing between navbar and main content -->
     <div class="my-5">
-        <h1 class="text-center mb-5">Main Research Topics</h1>
+        <h2 class="text-center mb-5">Explore Research Topics</h2>
 
         <!-- Research Topics Section -->
         <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
@@ -16,7 +16,7 @@
                 <div class="card shadow-sm h-100">
                     <img src="{{ url_for('static', filename='images/' + image) }}" class="img-fluid" alt="{{ topic }}">
                     <div class="card-body">
-                        <h5 class="card-title text-center">{{ topic['name'] }}</h5>
+                        <h5 class="card-title text-center">{{ topic }}</h5>
                     </div>
                     <a href="{{ url_for('topic_page', topic_name=topic) }}" class="stretched-link"></a>
                 </div>
@@ -26,7 +26,7 @@
 
         <!-- Map Section -->
         <div class="mb-5">
-            <h2 class="text-center mb-4">Projects on the Map</h2>
+            <h2 class="text-center mb-5">Our Projects</h2>
             <div class="map-container">
                 {{ generate_map(project_locations) | safe }}
             </div>
@@ -34,7 +34,7 @@
 
         <!-- Carousel Section -->
         <div class="mb-5">
-            <h2 class="text-center mb-4">Latest Projects</h2>
+            <h2 class="text-center mb-4">Latest</h2>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     {% for project in recent_projects %}

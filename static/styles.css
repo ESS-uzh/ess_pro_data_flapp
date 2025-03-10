@@ -1,0 +1,139 @@
+/* Add space between navbar and content */
+body {
+    padding-top: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Style the navbar title */
+.navbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.navbar-title:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* Add padding between sections */
+.container>div {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Card styling */
+.card {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Card image styling */
+.card img {
+    width: 100%;
+    height: 200px;
+    /* Set a fixed height */
+    object-fit: cover;
+    /* Maintain aspect ratio and crop if necessary */
+}
+
+/* Card image styling */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Add consistent spacing between elements */
+.mb-5,
+.my-5 {
+    margin-bottom: 3rem !important;
+    margin-top: 3rem !important;
+}
+
+/* Map container styling */
+.map-container {
+    margin-top: 30px;
+    width: 100%;
+    height: 500px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Carousel controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+/* Style for the research topic titles */
+.card .card-body .card-title {
+    margin-top: auto;
+    padding: 15px 10px;
+    font-weight: bold;
+    color: #007BFF;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
+    /* Ensure same height for all card-body */
+}
+
+/* Hover effect for cards */
+.card:hover {
+    height: 100%;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* More space between cards */
+.row-cols-md-2 .col {
+    margin-bottom: 20px;
+}
+
+/* Card Styling for Project List */
+.project-card {
+    background-color: #f0f8ff;
+    /* Light blueish background */
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2);
+    background-color: #e6f2ff;
+    /* Slightly darker on hover */
+}
+
+/* Card Title */
+.project-card .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+/* Card Text */
+.project-card .card-text {
+    color: #555;
+}
+
+/* Add subtle animation */
+.stretched-link:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
