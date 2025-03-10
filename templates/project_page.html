@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ project['name'] }}</h1>
+<p>{{ project['description'] }}</p>
+
+<h2>Map</h2>
+<div>
+    {{ generate_map([], polygon=project['polygon']) | safe }}
+</div>
+
+<h2>Participants</h2>
+<ul>
+    {% for participant in project['participants'] %}
+    <li>{{ participant }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Funding Organization</h2>
+<p>{{ project['funding'] }}</p>
+{% endblock %}

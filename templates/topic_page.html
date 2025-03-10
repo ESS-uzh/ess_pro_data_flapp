@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ topic_name }}</h2>
+<div>
+    {{ generate_map(project_locations) | safe }}
+</div>
+< <h2>Projects</h2>
+    <ul>
+        {% for project in projects %}
+        <li>
+            <a href="{{ url_for('project_page', project_id=project['id']) }}">
+                {{ project['name'] }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endblock %}

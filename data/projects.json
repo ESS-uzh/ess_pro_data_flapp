@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "name": "Project Alpha",
+        "description": "A biodiversity project",
+        "lat": 47.457618,
+        "lon": 8.446797,
+        "tags": [
+            "Biodiversity"
+        ],
+        "participants": [
+            "Alice",
+            "Bob"
+        ],
+        "funding": "Organization A",
+        "polygon": [
+            [
+                47.4576,
+                8.4468
+            ],
+            [
+                47.4870,
+                8.4473
+            ],
+            [
+                47.4882,
+                8.2975
+            ],
+            [
+                47.4576,
+                8.4468
+            ]
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Project Beta",
+        "description": "A climate change initiative",
+        "lat": 35.873297,
+        "lon": -118.595265,
+        "tags": [
+            "Climate Change"
+        ],
+        "participants": [
+            "Charlie",
+            "Dana"
+        ],
+        "funding": "Organization B",
+        "polygon": [
+            [
+                35.8732,
+                -118.5952
+            ],
+            [
+                35.1114,
+                -118.1984
+            ],
+            [
+                35.4818,
+                -117.9338
+            ],
+            [
+                35.8732,
+                -118.5952
+            ]
+        ]
+    }
+]
