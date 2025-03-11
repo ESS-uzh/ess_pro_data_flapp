@@ -1,9 +1,68 @@
+/* Light background for the entire page */
+.page-background {
+    background-color: #eafaea;
+    /* Light green */
+    min-height: 100vh;
+    /* Ensure full height */
+    padding: 30px 0;
+    /* Some spacing around */
+}
+
+/* Style navbar links */
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+    /* Increase font size */
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0056b3;
+    /* Darker blue on hover */
+}
+
+/* Style dropdown menu */
+.dropdown-menu {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+/* Hover effect on dropdown items */
+.dropdown-item:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.container-welcome {
+    background-color: #eafaea;
+    padding: 100px;
+}
+
+
+.container.mt-4 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #cceccc;
+    /* Light green border */
+}
+
+.explore-title {
+    padding: 100px;
+}
+
+.welcome-text {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
 /* Add space between navbar and content */
 body {
     padding-top: 20px;
     background-color: #f9f9f9;
 }
-
 
 /* General Page Styling */
 h2,
@@ -60,14 +119,14 @@ p {
 .mb-5,
 .my-5 {
     margin-bottom: 3rem !important;
-    margin-top: 3rem !important;
+    margin-top: 0.1rem !important;
 }
 
 
 /* Map Styling */
 .map-container {
     width: 100%;
-    height: 350px;
+    height: 450px;
     border: 2px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
@@ -149,7 +208,7 @@ p {
 /* Maintain fixed height for filter card */
 .filter-card {
     min-height: 350px;
-    max-height: 350px;
+    max-height: 450px;
 }
 
 /* Project list with scrollable container */

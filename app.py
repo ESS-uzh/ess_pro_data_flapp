@@ -10,7 +10,10 @@ with open("data/projects.json") as f:
 
 # Research topics and images
 TOPICS = {
-    "Biodiversity": ["biodiversity_img.jpg", "biodiversity is .."],
+    "Biodiversity": [
+        "biodiversity_img.jpg",
+        "Biodiversity refers to the variety of life forms on Earth, encompassing different species, ecosystems, and genetic diversity.",
+    ],
     "Climate Change": ["climate_change_img.png", " climate change is .."],
     "Ecosystem Services": ["ecosystem_services_img.jpg", "ecosystems services is .."],
     "Social Ecological Systems": ["sus_dev_img.png", " sustenaible development is .."],
@@ -18,6 +21,18 @@ TOPICS = {
 
 # Prepare the data for the map
 project_locations = [(p["lat"], p["lon"], p["name"]) for p in projects]
+
+
+@app.context_processor
+def inject_topics():
+    return dict(
+        research_topics={
+            "Biodiversity": "biodiversity.jpg",
+            "Climate Change": "climate_change.jpg",
+            "Ecosystem Services": "ecosystem_services.jpg",
+            "Social-Ecological Systems": "social_ecological.jpg",
+        }
+    )
 
 
 @app.route("/")

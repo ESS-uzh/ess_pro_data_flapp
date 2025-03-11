@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
+{% block welcome_message %}
+<div class="text-center container-welcome mt-4">
+    <h1 class="welcome-text">Welcome to Earth System Science</h1>
+    <p class="lead">Discover research projects, data and pubblication in our different research areas</p>
+</div>
+{% endblock %}
+
 {% block content %}
 
 <!-- Main Content -->
@@ -7,7 +14,7 @@
 
     <!-- Spacing between navbar and main content -->
     <div class="my-5">
-        <h2 class="text-center mb-5">Explore Research Topics</h2>
+        <h1 class="text-center explore-title">Explore Research</h1>
 
         <!-- Research Topics Section -->
         <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
@@ -27,7 +34,6 @@
 
         <!-- Map Section -->
         <div class="mb-5">
-            <h2 class="text-center mb-5">Our Projects</h2>
             <div class="map-container">
                 {{ generate_map(project_locations) | safe }}
             </div>
@@ -35,7 +41,7 @@
 
         <!-- Carousel Section -->
         <div class="mb-5">
-            <h2 class="text-center mb-4">Latest</h2>
+            <h1 class="text-center explore-title">Latest Projects</h1>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     {% for project in recent_projects %}

@@ -49,18 +49,105 @@
     },
     {
         "id": 2,
-        "name": "Project Beta",
-        "description": "A climate change initiative",
+        "name": "The Circle Future Earth",
+        "description": "Where/how do transitions in ecosystems occur? What is the land biosphere response? Literature review to establish the current and future use of earth observation to answer these questions",
         "lat": 35.873297,
         "lon": -118.595265,
+        "location": "Global",
         "tags": [
-            "Climate Change"
+            "Biodiversity",
+            "Ecosystem Services"
         ],
         "participants": [
-            "Charlie",
-            "Dana"
+            "Dr. Martin O. Reader",
+            "Prof. Maria J. Santos"
         ],
-        "funding": "Organization B",
+        "doi_data": "",
+        "doi_pub": "",
+        "funding": [
+            [
+                "esa",
+                "European Space agency"
+            ]
+        ],
+        "polygon": [
+            [
+                35.8732,
+                -118.5952
+            ],
+            [
+                35.1114,
+                -118.1984
+            ],
+            [
+                35.4818,
+                -117.9338
+            ],
+            [
+                35.8732,
+                -118.5952
+            ]
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Sustainability Discourses",
+        "description": "Understanding and tracking urban sustainability discourses. We develop automated models to analyse urban sustainability discourses based on media data. In particular, we are interested in the rise and fall of different topics, who positions themselves in which way and in the stories that are told about urban sustainability over time. We also look back - how has the discourse around urban sustainability developed over time?",
+        "lat": 47.377964,
+        "lon": 8.551129,
+        "location": "Europe",
+        "tags": [
+            "Social Ecological Systems"
+        ],
+        "participants": [
+            "Myriam Pham-Truffert",
+            "Dr. Mario"
+        ],
+        "doi_data": "",
+        "doi_pub": "",
+        "funding": [
+            [
+                "DIZH",
+                "Digitalization Initiative of the Zurich Higher Education Ins"
+            ]
+        ],
+        "polygon": []
+    },
+    {
+        "id": 4,
+        "name": "Modelling biodiversity and ecosystem services loss scenarios",
+        "description": "Better understanding the impacts of biodiversity loss and ecosystem degradation is important for our society and economy. Healthy ecosystems underpin all the UN SDGs; and our economies and businesses remain dependent on the robustness of natural assets. The BES (Biodiversity and Ecosystem Services) Scenarios Modelling Initiative aims to provide meaningful and quantified BES futures at a highly granular level and agglomerate data to provide globally applicable regional views.",
+        "lat": 0,
+        "lon": 0,
+        "location": "Global",
+        "tags": [
+            "Biodiversity",
+            "Ecosystem Services"
+        ],
+        "participants": [
+            "Dr. Martin O. Reader",
+            "Prof. Maria J. Santos"
+        ],
+        "doi_data": "",
+        "doi_pub": "",
+        "funding": [
+            [
+                "WWF",
+                "World Wildlife Fund"
+            ],
+            [
+                "Swiss-Re",
+                "Swiss-Re"
+            ],
+            [
+                "AXA",
+                "Insurance and pension provisioning in Switzerland"
+            ],
+            [
+                "EY",
+                "Ernst & Yung"
+            ]
+        ],
         "polygon": [
             [
                 35.8732,
