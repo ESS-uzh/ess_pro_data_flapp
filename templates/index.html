@@ -2,8 +2,8 @@
 
 {% block welcome_message %}
 <div class="text-center container-welcome mt-4">
-    <h1 class="welcome-text">Welcome to Earth System Science</h1>
-    <p class="lead">Discover research projects, data and pubblication in our different research areas</p>
+    <h1 class="welcome-text">Earth System Science Research Group</h1>
+    <p class="lead"><strong>Discover projects, data and pubblication</strong> in our different research areas</p>
 </div>
 {% endblock %}
 
@@ -12,9 +12,55 @@
 <!-- Main Content -->
 <div class="container">
 
+    <!-- Carousel Section -->
+    <div class="mb-5">
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicators (small dots below the carousel) -->
+            <div class="carousel-indicators">
+                {% for project in recent_projects %}
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ loop.index0 }}"
+                    {% if loop.first %}class="active" aria-current="true" {% endif %}
+                    aria-label="Slide {{ loop.index }}">
+                </button>
+                {% endfor %}
+            </div>
+
+            <!-- Carousel Inner (Images + Text) -->
+            <div class="carousel-inner">
+                {% for project in recent_projects %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                    <div class="carousel-image-container">
+                        <img src="{{ url_for('static', filename='images/' + project) }}" class="d-block w-100"
+                            alt="Project Image">
+                        <div class="carousel-text">
+                            <h3>Project Title</h3>
+                            <p>Short project description goes here...</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Previous & Next Buttons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </div>
     <!-- Spacing between navbar and main content -->
     <div class="my-5">
-        <h1 class="text-center explore-title">Explore Research</h1>
+        <div class="section-title-container">
+            <h3 class="section-title">Explore Research Topics</h3>
+        </div>
 
         <!-- Research Topics Section -->
         <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
@@ -35,43 +81,13 @@
         <!-- Map Section -->
         <div class="mb-5">
             <div class="map-container">
-                {{ generate_map(project_locations) | safe }}
-            </div>
-        </div>
-
-        <!-- Carousel Section -->
-        <div class="mb-5">
-            <h1 class="text-center explore-title">Latest Projects</h1>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    {% for project in recent_projects %}
-                    <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
-                        <div class="d-flex justify-content-center">
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ project['name'] }}</h5>
-                                    <p class="card-text">{{ project['description'] }}</p>
-                                    <a href="/project/{{ project['name'] }}" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                {{generate_map(project_locations) | safe }}
             </div>
         </div>
 
     </div>
+
+</div>
 
 </div>
 

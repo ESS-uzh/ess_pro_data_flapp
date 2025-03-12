@@ -8,17 +8,38 @@
     /* Some spacing around */
 }
 
+/* Make navbar light grey with transparency */
+.navbar {
+    background-color: #f1f1f1 !important;
+    /* Light grey with 80% opacity */
+    backdrop-filter: blur(200px);
+    /* Optional: Adds a subtle blur effect */
+}
+
+
 /* Style navbar links */
 .navbar-nav .nav-link {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     /* Increase font size */
     font-weight: bold;
-    color: #0056b3;
+    color: #007BFF;
 }
 
 .navbar-nav .nav-link:hover {
     color: #0056b3;
     /* Darker blue on hover */
+}
+
+/* Style the navbar title */
+.navbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.navbar-title:hover {
+    color: #0056b3;
+    text-decoration: none;
 }
 
 /* Style dropdown menu */
@@ -47,12 +68,43 @@
     /* Light green border */
 }
 
-.explore-title {
-    padding: 100px;
+.section-title {
+    font-family: 'Playfair Display', serif;
+    /* Elegant, professional font */
+    font-size: 1.8rem;
+    /* Adjust size */
+    font-weight: bold;
+    /* Make it stand out */
+    letter-spacing: 1px;
+    /* Slight spacing for elegance */
+    text-transform: capitalize;
+    /* Only first letter uppercase */
+    color: #004466;
+    /* Dark blue for contrast */
+}
+
+.section-title-container {
+    /* Dark blue to contrast with light blue box */
+    background: rgba(173, 216, 230, 0.2);
+    /* Light blue with transparency */
+    backdrop-filter: blur(5px);
+    /* Optional: Adds a nice blur effect */
+    padding: 20px;
+    /* Space inside the box */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for elevated effect */
+    text-align: center;
+    /* Center text */
+    max-width: 600px;
+    /* Optional: Limits width */
+    margin: 0 auto 20px auto;
+    /* Center the box and add margin below */
 }
 
 .welcome-text {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     color: #007BFF;
     margin-bottom: 20px;
@@ -68,18 +120,6 @@ body {
 h2,
 p {
     margin-bottom: 20px;
-}
-
-/* Style the navbar title */
-.navbar-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #007BFF;
-}
-
-.navbar-title:hover {
-    color: #0056b3;
-    text-decoration: none;
 }
 
 /* Add padding between sections */
@@ -126,17 +166,55 @@ p {
 /* Map Styling */
 .map-container {
     width: 100%;
-    height: 450px;
+    height: 350px;
     border: 2px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
     background-color: transparent;
 }
 
-/* Carousel controls */
+/* Ensures the carousel has a fixed height */
+.carousel-image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    /* Adjust height as needed */
+}
+
+.carousel-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Styles the text overlay */
+.carousel-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+}
+
+/* Styles carousel indicators (dots) */
+.carousel-indicators button {
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* Style carousel navigation arrows */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent arrows */
     border-radius: 50%;
 }
 
@@ -147,7 +225,7 @@ p {
     font-weight: bold;
     color: #007BFF;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     background-color: #f1f1f1;
     border-top: 1px solid #ddd;
     display: flex;
@@ -208,7 +286,7 @@ p {
 /* Maintain fixed height for filter card */
 .filter-card {
     min-height: 350px;
-    max-height: 450px;
+    max-height: 350px;
 }
 
 /* Project list with scrollable container */

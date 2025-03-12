@@ -21,6 +21,7 @@ TOPICS = {
 
 # Prepare the data for the map
 project_locations = [(p["lat"], p["lon"], p["name"]) for p in projects]
+recent_projects = ["frog.jpg", "pappagalli.jpg", "river.jpg"]
 
 
 @app.context_processor
@@ -42,7 +43,8 @@ def index():
         research_topics=TOPICS,
         projects=projects,
         project_locations=project_locations,
-        generate_map=generate_map,  # Pass the function to the template
+        recent_projects=recent_projects,
+        generate_map=generate_map_home_page,  # Pass the function to the template
     )
 
 
@@ -50,7 +52,6 @@ def index():
 def topic_page(topic_name):
     """Page for a specific research topic with project filtering."""
     topic_projects = [p for p in projects if topic_name in p["tags"]]
-    print(topic_projects)
     project_locations = [(p["lat"], p["lon"], p["name"]) for p in topic_projects]
     topic_description = TOPICS[topic_name][1]
     return render_template(
@@ -75,6 +76,27 @@ def project_page(project_id):
 
 
 # Folium Map Generator
+def generate_map_home_page(locations, center=[10.245731, -28.782217], zoom_start=2):
+    folium_map = folium.Map(
+        location=center, zoom_start=zoom_start, tiles="Cartodb Positron"
+    )
+
+    for lat, lon, name in locations:
+        if lat and lon:
+            folium.CircleMarker(
+                location=[lat, lon],
+                radius=5,  # Adjust dot size
+                color="white",  # Border color
+                fill=True,
+                fill_color="blue",  # Fill color
+                fill_opacity=0.7,
+                popup=name,
+            ).add_to(folium_map)
+
+    return folium_map._repr_html_()
+
+
+# Folium Map Generator
 def generate_map(locations, center=[30.079227, -21.750656], zoom_start=2, polygon=None):
     folium_map = folium.Map(
         location=center, zoom_start=zoom_start, tiles="OpenStreetMap"
@@ -87,9 +109,10 @@ def generate_map(locations, center=[30.079227, -21.750656], zoom_start=2, polygo
         ).add_to(folium_map)
     else:
         for lat, lon, name in locations:
-            folium.Marker(
-                [lat, lon], popup=name, icon=folium.Icon(color="blue")
-            ).add_to(folium_map)
+            if lat and lon:
+                folium.Marker(
+                    [lat, lon], popup=name, icon=folium.Icon(color="blue")
+                ).add_to(folium_map)
 
     return folium_map._repr_html_()
 

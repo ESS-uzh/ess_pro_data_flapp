@@ -51,8 +51,8 @@
         "id": 2,
         "name": "The Circle Future Earth",
         "description": "Where/how do transitions in ecosystems occur? What is the land biosphere response? Literature review to establish the current and future use of earth observation to answer these questions",
-        "lat": 35.873297,
-        "lon": -118.595265,
+        "lat": 0,
+        "lon": 0,
         "location": "Global",
         "tags": [
             "Biodiversity",
@@ -146,6 +146,99 @@
             [
                 "EY",
                 "Ernst & Yung"
+            ]
+        ],
+        "polygon": [
+            [
+                35.8732,
+                -118.5952
+            ],
+            [
+                35.1114,
+                -118.1984
+            ],
+            [
+                35.4818,
+                -117.9338
+            ],
+            [
+                35.8732,
+                -118.5952
+            ]
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Agroforestry for food security",
+        "description": "",
+        "lat": 10.7139,
+        "lon": 76.1974,
+        "location": "Kerela, India",
+        "tags": [
+            "Biodiversity",
+            "Ecosystem Services",
+            "Social Ecological Systems"
+        ],
+        "participants": [
+            "Mary Ann George",
+            "Prof. Maria J. Santos"
+        ],
+        "doi_data": "",
+        "doi_pub": "",
+        "funding": [
+            [
+                "URPP",
+                "URPP Global Change and Biodiversity"
+            ]
+        ],
+        "polygon": [
+            [
+                35.8732,
+                -118.5952
+            ],
+            [
+                35.1114,
+                -118.1984
+            ],
+            [
+                35.4818,
+                -117.9338
+            ],
+            [
+                35.8732,
+                -118.5952
+            ]
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Impacts of drought on ecosystem resilience, biodiversity and functioning in the Mediterranean Basin",
+        "description": "",
+        "lat": 47.214344,
+        "lon": 9.340093,
+        "location": "Mediterranean Basin",
+        "tags": [
+            "Biodiversity",
+            "Climate Change"
+        ],
+        "participants": [
+            "Matilde Torrassa",
+            "Prof. Maria J. Santos"
+        ],
+        "doi_data": "",
+        "doi_pub": "",
+        "funding": [
+            [
+                "pnrr",
+                "Piano Nazionale di Ripresa and Resilienza"
+            ],
+            [
+                "CIMA",
+                "CIMA research foundation"
+            ],
+            [
+                "UNIGEN",
+                "University of Genova"
             ]
         ],
         "polygon": [
