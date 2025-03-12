@@ -16,7 +16,7 @@
     <div class="mb-5">
 
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <!-- Indicators (small dots below the carousel) -->
+            <!-- Indicators (dots below the carousel) -->
             <div class="carousel-indicators">
                 {% for project in recent_projects %}
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ loop.index0 }}"
@@ -26,18 +26,20 @@
                 {% endfor %}
             </div>
 
-            <!-- Carousel Inner (Images + Text) -->
+            <!-- Carousel Inner (Images + Text + Clickable Link) -->
             <div class="carousel-inner">
                 {% for project in recent_projects %}
                 <div class="carousel-item {% if loop.first %}active{% endif %}">
-                    <div class="carousel-image-container">
-                        <img src="{{ url_for('static', filename='images/' + project) }}" class="d-block w-100"
-                            alt="Project Image">
-                        <div class="carousel-text">
-                            <h3>Project Title</h3>
-                            <p>Short project description goes here...</p>
+                    <a href="{{ url_for('project_page', project_id=project['id']) }}" class="carousel-link">
+                        <div class="carousel-image-container">
+                            <img src="{{ url_for('static', filename='images/' + project['img']) }}"
+                                class="d-block w-100" alt="{{ project['name'] }}">
+                            <div class="carousel-text">
+                                <h3>{{ project['name'] }}</h3>
+                                <p>{{ project['short_description'] }}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 {% endfor %}
             </div>
@@ -59,7 +61,7 @@
     <!-- Spacing between navbar and main content -->
     <div class="my-5">
         <div class="section-title-container">
-            <h3 class="section-title">Explore Research Topics</h3>
+            <h3 class="section-title">Explore our research, projects and more</h3>
         </div>
 
         <!-- Research Topics Section -->

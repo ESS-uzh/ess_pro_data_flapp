@@ -21,7 +21,11 @@ TOPICS = {
 
 # Prepare the data for the map
 project_locations = [(p["lat"], p["lon"], p["name"]) for p in projects]
-recent_projects = ["frog.jpg", "pappagalli.jpg", "river.jpg"]
+
+
+def get_selected_projects(projects, ids):
+    selected = [p for p in projects if p["id"] in ids]
+    return selected
 
 
 @app.context_processor
@@ -43,7 +47,7 @@ def index():
         research_topics=TOPICS,
         projects=projects,
         project_locations=project_locations,
-        recent_projects=recent_projects,
+        recent_projects=get_selected_projects(projects, [1, 2, 3]),
         generate_map=generate_map_home_page,  # Pass the function to the template
     )
 

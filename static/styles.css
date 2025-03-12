@@ -8,6 +8,33 @@
     /* Some spacing around */
 }
 
+/* Footer Styling */
+.footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Dark background with transparency */
+    color: white;
+    text-align: center;
+}
+
+.footer a {
+    color: #f8d210;
+    /* Light yellow for links */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Logo Styling */
+.footer-logo {
+    max-height: 50px;
+    /* Adjust logo size */
+    margin: 0 10px;
+    /* Spacing between logos */
+}
+
+
 /* Make navbar light grey with transparency */
 .navbar {
     background-color: #f1f1f1 !important;
@@ -71,7 +98,7 @@
 .section-title {
     font-family: 'Playfair Display', serif;
     /* Elegant, professional font */
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     /* Adjust size */
     font-weight: bold;
     /* Make it stand out */
@@ -177,7 +204,7 @@ p {
 .carousel-image-container {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 500px;
     /* Adjust height as needed */
 }
 
@@ -216,6 +243,24 @@ p {
     background-color: rgba(0, 0, 0, 0.5);
     /* Semi-transparent arrows */
     border-radius: 50%;
+}
+
+/* Make sure the whole carousel item is clickable */
+.carousel-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    /* Remove default underline */
+}
+
+/* Optional: When hovering, slightly darken the image */
+.carousel-link img {
+    transition: 0.3s ease-in-out;
+}
+
+.carousel-link:hover img {
+    filter: brightness(90%);
 }
 
 /* Style for the research topic titles */
