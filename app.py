@@ -28,6 +28,14 @@ def get_selected_projects(projects, ids):
     return selected
 
 
+def compute_centroid(polygon):
+    """Compute the centroid of a polygon. Ensure the return format is (lat, lon)."""
+    lats, lons = zip(*polygon)  # Unpack latitudes and longitudes separately
+    centroid_lat = sum(lats) / len(lats)
+    centroid_lon = sum(lons) / len(lons)
+    return centroid_lat, centroid_lon  # Return in (lat, lon) format
+
+
 @app.context_processor
 def inject_topics():
     return dict(
@@ -72,10 +80,27 @@ def topic_page(topic_name):
 def project_page(project_id):
     """Detailed page for a specific project."""
     project = next((p for p in projects if p["id"] == project_id), None)
+
+    if not project:
+        return "Project not found", 404
+
+    zoom_start = 8
+    if project["polygon"]:
+        # Compute dynamic center from polygon
+        center = compute_centroid(project["polygon"])
+    else:
+        center = [10.245731, -28.782217]
+        zoom_start = 2
+
+    # Generate map with custom center & zoom (e.g., zoom 8 for project details)
+    project_map = generate_map(
+        [], center=center, zoom_start=zoom_start, polygon=project["polygon"]
+    )
+
     return render_template(
         "project_page.html",
         project=project,
-        generate_map=generate_map,  # Pass the function to the template
+        project_map=project_map,  # Pass the generated map HTML
     )
 
 
