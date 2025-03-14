@@ -48,7 +48,12 @@
     <!-- Funding -->
     <div class="col-md-6">
         <h4>Funding Organization</h4>
-        <p class="funding-info">{{ project['funding'] }}</p>
+        <div class="funding-logos">
+            {% for fund in project['funding'] %}
+            <img src="{{ url_for('static', filename='images/logos_resized/' + fund[0]) }}" class="funding-logo"
+                alt="Funding Logo">
+            {% endfor %}
+        </div>
     </div>
 </div>
 </div>

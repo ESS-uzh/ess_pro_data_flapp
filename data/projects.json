@@ -177,6 +177,8 @@
         "id": 5,
         "name": "Agroforestry for food security",
         "description": "",
+        "short_description": "",
+        "img": "kerela_india.jpg",
         "lat": 10.7139,
         "lon": 76.1974,
         "location": "Kerela, India",
@@ -229,6 +231,57 @@
         ],
         "participants": [
             "Matilde Torrassa",
+            "Prof. Maria J. Santos"
+        ],
+        "doi_data": "",
+        "doi_pub": "",
+        "funding": [
+            [
+                "pnrr",
+                "Piano Nazionale di Ripresa and Resilienza"
+            ],
+            [
+                "CIMA",
+                "CIMA research foundation"
+            ],
+            [
+                "UNIGEN",
+                "University of Genova"
+            ]
+        ],
+        "polygon": [
+            [
+                35.8732,
+                -118.5952
+            ],
+            [
+                35.1114,
+                -118.1984
+            ],
+            [
+                35.4818,
+                -117.9338
+            ],
+            [
+                35.8732,
+                -118.5952
+            ]
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Fire-vegetation model parametrization using hyperspectral data",
+        "description": "",
+        "lat": 39.141232,
+        "lon": -121.052109,
+        "location": "Sierra Nevada, California",
+        "tags": [
+            "Biodiversity",
+            "Climate Change"
+        ],
+        "participants": [
+            "Matilde Torrassa",
+            "Tiziana Koch",
             "Prof. Maria J. Santos"
         ],
         "doi_data": "",

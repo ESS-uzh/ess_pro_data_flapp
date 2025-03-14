@@ -84,13 +84,13 @@ def project_page(project_id):
     if not project:
         return "Project not found", 404
 
-    zoom_start = 8
+    zoom_start = 7
     if project["polygon"]:
         # Compute dynamic center from polygon
         center = compute_centroid(project["polygon"])
     else:
         center = [10.245731, -28.782217]
-        zoom_start = 2
+        zoom_start = 0
 
     # Generate map with custom center & zoom (e.g., zoom 8 for project details)
     project_map = generate_map(
