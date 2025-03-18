@@ -199,24 +199,7 @@
                 "URPP Global Change and Biodiversity"
             ]
         ],
-        "polygon": [
-            [
-                35.8732,
-                -118.5952
-            ],
-            [
-                35.1114,
-                -118.1984
-            ],
-            [
-                35.4818,
-                -117.9338
-            ],
-            [
-                35.8732,
-                -118.5952
-            ]
-        ]
+        "polygon": "polygon_id_5.geojson"
     },
     {
         "id": 6,
@@ -272,6 +255,7 @@
         "id": 7,
         "name": "Fire-vegetation model parametrization using hyperspectral data",
         "description": "",
+        "img": "sierra_nevada.jpg",
         "lat": 39.141232,
         "lon": -121.052109,
         "location": "Sierra Nevada, California",
@@ -300,23 +284,6 @@
                 "University of Genova"
             ]
         ],
-        "polygon": [
-            [
-                35.8732,
-                -118.5952
-            ],
-            [
-                35.1114,
-                -118.1984
-            ],
-            [
-                35.4818,
-                -117.9338
-            ],
-            [
-                35.8732,
-                -118.5952
-            ]
-        ]
+        "polygon": "polygon_id_7.geojson"
     }
 ]

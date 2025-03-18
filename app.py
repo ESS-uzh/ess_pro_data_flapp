@@ -23,6 +23,12 @@ TOPICS = {
 project_locations = [(p["lat"], p["lon"], p["name"]) for p in projects]
 
 
+def read_json(json_file):
+    with open(json_file, "r") as file:
+        data = json.load(file)
+    return data
+
+
 def get_selected_projects(projects, ids):
     selected = [p for p in projects if p["id"] in ids]
     return selected
@@ -55,7 +61,7 @@ def index():
         research_topics=TOPICS,
         projects=projects,
         project_locations=project_locations,
-        recent_projects=get_selected_projects(projects, [1, 2, 3]),
+        recent_projects=get_selected_projects(projects, [1, 5, 7]),
         generate_map=generate_map_home_page,  # Pass the function to the template
     )
 
@@ -84,17 +90,24 @@ def project_page(project_id):
     if not project:
         return "Project not found", 404
 
-    zoom_start = 7
-    if project["polygon"]:
-        # Compute dynamic center from polygon
-        center = compute_centroid(project["polygon"])
+    zoom_start = 5
+    try:
+        # look for a file under data/polygons
+        data = read_json(f"data/polygons/{project['polygon']}")
+    except FileNotFoundError:
+        polygon = project["polygon"]
     else:
+        polygon = data["features"][0]["geometry"]["coordinates"][0]
+
+    center = compute_centroid(polygon)
+
+    if not polygon:
         center = [10.245731, -28.782217]
         zoom_start = 0
 
     # Generate map with custom center & zoom (e.g., zoom 8 for project details)
     project_map = generate_map(
-        [], center=center, zoom_start=zoom_start, polygon=project["polygon"]
+        [], center=center, zoom_start=zoom_start, polygon=polygon
     )
 
     return render_template(
