@@ -22,17 +22,6 @@
                 <h1 class="project-title">{{ project['name'] }}</h1>
                 <p class="project-description">{{ project['description'] }}</p>
 
-                <!-- DOI Links -->
-                <div class="mt-3">
-                    {% if project['data_doi'] %}
-                    <p><strong>Data DOI:</strong> <a href="{{ project['data_doi'] }}" target="_blank">{{
-                            project['data_doi'] }}</a></p>
-                    {% endif %}
-                    {% if project['pub_doi'] %}
-                    <p><strong>Publication DOI:</strong> <a href="{{ project['pub_doi'] }}" target="_blank">{{
-                            project['pub_doi'] }}</a></p>
-                    {% endif %}
-                </div>
 
                 <!-- Participants -->
                 <h3 class="mt-4">Participants</h3>
@@ -47,6 +36,17 @@
 
     <!-- Funding -->
     <div class="col-md-6">
+        <!-- DOI Links -->
+        <div class="mt-3 doi-section">
+            {% if project['doi_data'] %}
+            <p><strong>Data DOI:</strong> <a href="{{ project['doi_data'] }}" target="_blank">{{
+                    project['doi_data'] }}</a></p>
+            {% endif %}
+            {% if project['doi_pub'] %}
+            <p><strong>Publication DOI:</strong> <a href="{{ project['doi_pub'] }}" target="_blank">{{
+                    project['doi_pub'] }}</a></p>
+            {% endif %}
+        </div>
         <h4>Funding Organization</h4>
         <div class="funding-logos">
             {% for fund in project['funding'] %}

@@ -442,6 +442,12 @@ img.object-fit-cover {
     border: none;
 }
 
+
+.doi-section {
+    margin-bottom: 100px;
+    /* Adjust as needed */
+}
+
 .funding-info {
     font-size: 1.2rem;
     font-weight: bold;
