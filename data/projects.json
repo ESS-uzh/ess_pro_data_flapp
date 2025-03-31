@@ -285,5 +285,57 @@
             ]
         ],
         "polygon": "polygon_id_7.geojson"
+    },
+    {
+        "id": 8,
+        "name": "EO4Resilience",
+        "description": "",
+        "img": "",
+        "lat": 39.141232,
+        "lon": -121.052109,
+        "location": "Switzerland, France, Italy",
+        "tags": [
+            "Biodiversity",
+            "Climate Change"
+        ],
+        "participants": [
+            "Dr. Andreas Hüni",
+            "Prof. Maria J. Santos"
+        ],
+        "doi_data": "",
+        "doi_pub": "",
+        "funding": [
+            [
+                "esa",
+                "European Space agency"
+            ]
+        ],
+        "polygon": ""
+    },
+    {
+        "id": 9,
+        "name": "SES archetypes",
+        "description": "",
+        "img": "",
+        "lat": 0,
+        "lon": 0,
+        "location": "Global",
+        "tags": [
+            "Biodiversity",
+            "Climate Change"
+        ],
+        "participants": [
+            "Dr. Andreas Hüni",
+            "Prof. Maria J. Santos"
+        ],
+        "doi_data": "",
+        "doi_pub": "",
+        "funding": [
+            [
+                "esa",
+                "European Space agency"
+            ]
+        ],
+        "polygon": ""
     }
 ]

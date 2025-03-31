@@ -11,12 +11,12 @@ with open("data/projects.json") as f:
 # Research topics and images
 TOPICS = {
     "Biodiversity": [
-        "biodiversity_img.jpg",
+        "biodiversity_img.png",
         "Biodiversity refers to the variety of life forms on Earth, encompassing different species, ecosystems, and genetic diversity.",
     ],
-    "Climate Change": ["climate_change_img.png", " climate change is .."],
-    "Ecosystem Services": ["ecosystem_services_img.jpg", "ecosystems services is .."],
-    "Social Ecological Systems": ["sus_dev_img.png", " sustenaible development is .."],
+    "Climate Change": ["climate_change_img.jpg", " climate change is .."],
+    "Ecosystem Services": ["ecosystem_services_img.png", "ecosystems services is .."],
+    "Social Ecological Systems": ["sus_dev_img.jpg", " sustenaible development is .."],
 }
 
 # Prepare the data for the map
@@ -94,12 +94,13 @@ def project_page(project_id):
     try:
         # look for a file under data/polygons
         data = read_json(f"data/polygons/{project['polygon']}")
-    except FileNotFoundError:
+    except (FileNotFoundError, IsADirectoryError) as e:
         polygon = project["polygon"]
     else:
         polygon = data["features"][0]["geometry"]["coordinates"][0]
 
-    center = compute_centroid(polygon)
+    if polygon:
+        center = compute_centroid(polygon)
 
     if not polygon:
         center = [10.245731, -28.782217]

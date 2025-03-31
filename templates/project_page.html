@@ -6,8 +6,10 @@
         <div class="row g-0 d-flex align-items-stretch">
             <!-- Left Column: Image with Map Overlay -->
             <div class="col-md-6 position-relative">
+                {% if project['img'] %}
                 <img src="{{ url_for('static', filename='images/' + project['img']) }}"
                     class="img-fluid w-100 object-fit-cover" alt="{{ project['name'] }}">
+                {% endif %}
 
                 <!-- Map Overlay -->
                 <div class="map-overlay">
