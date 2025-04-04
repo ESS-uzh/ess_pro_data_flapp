@@ -291,8 +291,8 @@
         "name": "EO4Resilience",
         "description": "",
         "img": "",
-        "lat": 39.141232,
-        "lon": -121.052109,
+        "lat": 45.864002,
+        "lon": 6.849683,
         "location": "Switzerland, France, Italy",
         "tags": [
             "Biodiversity",
@@ -325,15 +325,74 @@
             "Climate Change"
         ],
         "participants": [
-            "Dr. Andreas Hüni",
+            "Gupta Aman",
+            "Dr. Eppinga Maarten",
             "Prof. Maria J. Santos"
         ],
         "doi_data": "",
         "doi_pub": "",
         "funding": [
             [
-                "esa",
-                "European Space agency"
+                "URPP",
+                "URPP Global Change and Biodiversity"
+            ]
+        ],
+        "polygon": ""
+    },
+    {
+        "id": 10,
+        "name": "Human Traits",
+        "description": "",
+        "img": "",
+        "lat": 0.961883,
+        "lon": 114.554848,
+        "location": "Borneo",
+        "tags": [
+            "Biodiversity",
+            "Climate Change"
+        ],
+        "participants": [
+            "Pérez Nathalia",
+            "Dr. Eppinga Maarten",
+            "Prof. Meredith Schuman",
+            "Prof. Maria J. Santos"
+        ],
+        "doi_data": "",
+        "doi_pub": "",
+        "funding": [
+            [
+                "EU_response",
+                "EU response"
+            ],
+            [
+                "URPP",
+                "URPP Global Change and Biodiversity"
+            ]
+        ],
+        "polygon": ""
+    },
+    {
+        "id": 11,
+        "name": "Moisture recycling in Amazon",
+        "description": "",
+        "img": "",
+        "lat": -2.796339700963394,
+        "lon": -62.456257789622406,
+        "location": "Borneo",
+        "tags": [
+            "Biodiversity",
+            "Climate Change"
+        ],
+        "participants": [
+            "Nguyen Kien",
+            "Prof. Maria J. Santos"
+        ],
+        "doi_data": "",
+        "doi_pub": "",
+        "funding": [
+            [
+                "UZH",
+                "UZH"
             ]
         ],
         "polygon": ""
